@@ -1,4 +1,4 @@
-# FIAP_Movies-Web
+# FIAP-Movies-Web
 
 Project created using only modern HTML5 and CSS3.
 
