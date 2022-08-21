@@ -102,12 +102,20 @@ a {
   text-decoration: none;
 }
 
+button{
+  transition: background-color 0.1s ease-in-out;
+}
+
+button:hover{
+  transform: scale(102.5%);
+  background-color: #ff0066d7 !important;
+}
 
 body{
   font-size: var(--fs-400);
   font-style: var(--ff-body);
   color: var(--f-clr-primary);
-  background-color: var(--clr-secondary);
+  background-color: var(--clr-tertiary);
   font-weight: var(--fw-regular);
 }
 
@@ -210,7 +218,6 @@ header{
 
 main{
   font-family: var(--ff-body);
-  background-color: var(--clr-tertiary);
 }
 
 .section-1{
@@ -254,17 +261,18 @@ main{
 
 .cast-members{
   display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
 }
 
 .card{
-  margin-right: 1em;
+  margin: 1em 1em 0 0;
   text-align: center;
-  width: 25%;
-  border: 1px solid red;
-  background-color: var(--clr-secondary);
+  width: 17.5%;
 }
 
-.card-content figure img{
+.card-content-img figure img{
+  display: inline-block;
   width: 6.25em;
   height: 6.25em;
   border: 3px solid var(--f-clr-primary);
@@ -272,12 +280,21 @@ main{
   margin: auto;
 }
 
-.card-content figure figcaption{
+.card-content-img figure figcaption{
   margin-top: 1em;
 }
 
-.card-content p{
+.card-content-txt{
+  margin-top: -6.25em;
+  height: 10em;
+  border-radius: 10%;
+  width: 100%;
+  background-color: var(--clr-secondary);
+}
+
+.card-content-txt p{
   color: var(--f-clr-fifth);
+  padding-top: 6.5em;
   padding-bottom: 3em;
 }
 
@@ -295,4 +312,23 @@ main{
 
 .detailed-informations p{
   color: var(--f-clr-secondary);
+}
+
+footer{
+  width: 100%;
+  height: 5vh;
+  background-color: var(--clr-secondary);
+  display: flex;
+  align-items: center;
+}
+
+footer p{
+  width: inherit;
+  text-align: end;
+  color: var(--f-clr-primary);
+  padding-right: 1em;
+}
+
+footer p a{
+  text-decoration: underline;
 }
