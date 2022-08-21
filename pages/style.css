@@ -11,6 +11,7 @@
     --f-clr-secondary: #747474;
     --f-clr-tertiary: #929292;
     --f-clr-fourth: #CCCCCC;
+    --f-clr-fifth: #8D8D8D;
 
     --ff-primary: 'Bebas Neue', cursive;
     --ff-secondary: 'Roboto', sans-serif;
@@ -149,6 +150,7 @@ header{
 
 .header-title h1{
   padding: 0.1em 0 0 0.1em;
+  white-space: nowrap;
 }
 
 .header-list li{
@@ -179,19 +181,18 @@ header{
 .movie-informations figure{
   padding-right: 1em;
   border-radius: 5%;
-  max-width: 30vw;
+  max-width: 20vw;
 }
 
 .movie-informations figure img{
   margin: auto;
   width: 80%;
-  height: 120%; /* Estica a imagem verticalmente, criando-se a impressão de uma 'capa' */
+  height: 100%;
   border-radius: 5%;
 }
 
 .movie-title-description{
-  width: 75vw;
-  padding-right: 1em;
+  width: 60vw;
 }
 
 .movie-title-description h2{
@@ -222,25 +223,29 @@ main{
 }
 
 .buttons button{
-  position: relative;
-  padding: 0.25em 2em;
+  padding: 0 2.5em;
   background-color: var(--clr-primary);
   color: var(--f-clr-primary);
   border-radius: 10%;
   border: 0;
   margin-right: 1em;
+  height: 2em;
 }
 
 #button-icon-1::before{
   content: url('../images/svg/leftArr.svg');
   zoom: 0.8;
   padding-right: 0.2em;
+  vertical-align: middle;
 }
 
 #button-icon-2::before{
   content: url('../images/svg/web.svg');
-  /* zoom: 0.8; */
   padding-right: 0.2em;
+  vertical-align: middle;
+}
+.casting{
+  width: 100%;
 }
 
 .casting h3{
@@ -253,10 +258,41 @@ main{
 
 .card{
   margin-right: 1em;
+  text-align: center;
+  width: 25%;
+  border: 1px solid red;
+  background-color: var(--clr-secondary);
 }
 
+.card-content figure img{
+  width: 6.25em;
+  height: 6.25em;
+  border: 3px solid var(--f-clr-primary);
+  border-radius: 50%;
+  margin: auto;
+}
+
+.card-content figure figcaption{
+  margin-top: 1em;
+}
+
+.card-content p{
+  color: var(--f-clr-fifth);
+  padding-bottom: 3em;
+}
+
+
 .section-right{
-  width: 20%;
+  min-width: 12.5%;
   background-color: var(--clr-secondary);
-  padding: 0.5em;
+  padding: 1em;
+  margin: 0 0 1em 10%;
+}
+
+.detailed-informations{
+  margin: 1.5em 0;
+}
+
+.detailed-informations p{
+  color: var(--f-clr-secondary);
 }
