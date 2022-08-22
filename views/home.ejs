@@ -10,23 +10,7 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-title">
-            <img src="/images/svg/titleIcon.svg" alt="Icone FIAP Movies" srcset="">
-            <h1>Fiap Filmes</h1>
-        </div>
-        <ul class="header-list">
-            <li>
-                <a href="#">Filmes</a>
-            </li>
-            <li>
-                <a href="#">Séries</a>
-            </li>
-            <li>
-                <a href="https://github.com/LeandroLuna/FIAP-Movies-Web" target="_blank" rel="noopener">Sobre</a>
-            </li>
-        </ul>
-    </header>
+    <%- include('./templates/header') %> 
     <main>
         <div class="background">
             <h2>
@@ -72,10 +56,6 @@
             </div>
         </div>
     </main>
-    <footer>
-        <p>
-            Created by <a href="https://www.linkedin.com/in/luna-leandro/" target="_blank" rel="noopener">Leandro Luna</a>! 💜
-        </p>
-    </footer>
+    <%- include('./templates/footer') %> 
 </body>
 </html>

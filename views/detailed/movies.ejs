@@ -8,23 +8,7 @@
     <title>FIAP Movies - <%= movie.title %> </title>
 </head>
 <body>
-    <header>
-        <div class="header-title">
-            <img src="/images/svg/titleIcon.svg" alt="Icone FIAP Movies" srcset="">
-            <h1>Fiap Filmes</h1>
-        </div>
-        <ul class="header-list">
-            <li>
-                <a href="/">Filmes</a>
-            </li>
-            <li>
-                <a href="/">Séries</a>
-            </li>
-            <li>
-                <a href="https://github.com/LeandroLuna/FIAP-Movies-Web" target="_blank" rel="noopener">Sobre</a>
-            </li>
-        </ul>
-    </header>
+    <%- include('../templates/header') %> 
     <main>
         <div class="background" style="background: url('<%= movie.bg %>') #000;">
             <div class="movie-informations">
@@ -75,19 +59,19 @@
                 </div>
                 <div class="detailed-informations">
                     <h4>Idioma original</h4>
-                    <p>Inglês</p>
+                    <p><%= movie.originalLanguage %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Orçamento</h4>
-                    <p>US$50 milhões</p>
+                    <p><%= movie.budget %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Receita</h4>
-                    <p>US$150 milhões</p>
+                    <p><%= movie.income %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Lançamento</h4>
-                    <p>14/09/2022</p>
+                    <p><%= movie.releaseDate %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Nota</h4>
@@ -96,10 +80,6 @@
             </aside>
         </div>
     </main>
-    <footer>
-        <p>
-            Created by <a href="https://www.linkedin.com/in/luna-leandro/" target="_blank" rel="noopener">Leandro Luna</a>! 💜
-        </p>
-    </footer>
+    <%- include('../templates/footer') %> 
 </body>
 </html>

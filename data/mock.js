@@ -6,6 +6,10 @@ module.exports.mediaMock = [
     originalTitle: 'The diver',
     cover: '/images/covers/filme1/capaFilme1.jpg',
     bg: '/images/covers/filme1/bgFilme1.jpg',
+    originalLanguage: 'Inglês',
+    budget: 'US$50 milhões',
+    income: 'US$150 milhões',
+    releaseDate: '14/09/2022',
   },
   {
     id: 2,
@@ -14,6 +18,10 @@ module.exports.mediaMock = [
     originalTitle: 'The killer joker',
     cover: '/images/covers/filme2/capaFilme2.jpg',
     bg: '/images/covers/filme2/bgFilme2.jpg',
+    originalLanguage: 'Holandês',
+    budget: 'US$50 milhões',
+    income: 'US$150 milhões',
+    releaseDate: '14/09/2022',
   },
   {
     id: 3,
@@ -22,6 +30,10 @@ module.exports.mediaMock = [
     originalTitle: 'The lighthouse',
     cover: '/images/covers/filme3/capaFilme3.jpg',
     bg: '/images/covers/filme3/bgFilme3.jpg',
+    originalLanguage: 'Aústrico',
+    budget: 'US$10 milhões',
+    income: 'US$100 milhões',
+    releaseDate: '12/03/2017',
   },
   {
     id: 4,
@@ -30,6 +42,10 @@ module.exports.mediaMock = [
     originalTitle: 'Fire hair',
     cover: '/images/covers/filme4/capaFilme4.jpg',
     bg: '/images/covers/filme4/bgFilme4.jpg',
+    originalLanguage: 'Francês',
+    budget: 'US$80 milhões',
+    income: 'US$230 milhões',
+    releaseDate: '19/02/2021',
   },
   {
     id: 5,
@@ -38,6 +54,10 @@ module.exports.mediaMock = [
     originalTitle: 'The last goodbye',
     cover: '/images/covers/filme5/capaFilme5.jpg',
     bg: '/images/covers/filme5/bgFilme5.jpg',
+    originalLanguage: 'Alemão',
+    budget: 'US$55 milhões',
+    income: 'US$123 milhões',
+    releaseDate: '13/12/2020',
   },
 ];
 
