@@ -1,20 +1,7 @@
 const express = require('express');
 const path = require('path');
 const ejsMate = require('ejs-mate');
-
-const moviesMock = {
-  movie1: ['Aquaman', ''],
-  movie1: ['Aquaman'],
-  movie1: ['Aquaman'],
-  movie1: ['Aquaman'],
-};
-
-const seriesMock = {
-  series1: ['Aquaman'],
-  series1: ['Aquaman'],
-  series1: ['Aquaman'],
-  series1: ['Aquaman'],
-};
+const { mediaMock, actorsMock } = require('./data/mock');
 
 const app = express();
 app.engine('ejs', ejsMate);
@@ -23,11 +10,35 @@ app.set('views', path.join(__dirname, 'views'));
 app.use(express.static('public'));
 
 app.get('/', (req, res) => {
-  res.render('home');
+  res.render('home', { mediaMock });
 });
 
-app.get('/details', (req, res) => {
-  res.render('detailed/movies');
+function generateRandomCast() {
+  let i = 0;
+  const arr = [];
+
+  while (i < 4) {
+    const randomNumber = Math.floor(Math.random() * 7);
+    if (!arr.includes(actorsMock[randomNumber])) {
+      arr.push(actorsMock[randomNumber]);
+      i++;
+    }
+  }
+  return arr;
+}
+
+app.get('/movie/:id', (req, res) => {
+  const id = req.params.id;
+  const movie = mediaMock.find((media) => media.id == id);
+  const cast = generateRandomCast();
+  res.render('detailed/movies', { movie, cast });
+});
+
+app.get('/serie/:id', (req, res) => {
+  const id = req.params.id;
+  const serie = mediaMock.find((media) => media.id == id);
+  const cast = generateRandomCast();
+  res.render('detailed/series', { serie, cast });
 });
 
 app.listen(3000, () => {

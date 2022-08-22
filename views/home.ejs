@@ -23,7 +23,7 @@
                 <a href="#">Séries</a>
             </li>
             <li>
-                <a href="#" onClick="alert(`You've exploited my code, dude.. C'mon, go out!`)">Sobre</a>
+                <a href="https://github.com/LeandroLuna/FIAP-Movies-Web" target="_blank" rel="noopener">Sobre</a>
             </li>
         </ul>
     </header>
@@ -36,131 +36,39 @@
         <div class="section-1">
             <h3>Filmes em alta</h3>
             <div class="movies">
+                <% for (const media of mediaMock) { %> 
                 <div class="card">
                     <div class="card-content">
                         <figure>
-                            <img src="/images/covers/capaFilme1.jpg" alt="Imagem da capa do filme" srcset="" title="Imagem da capa do filme">
-                            <figcaption>O mergulhador</figcaption>
+                            <img src="<%= media.cover %>" alt="Imagem da capa do filme '<%= media.title %>'" srcset="" title="Imagem da capa do filme '<%= media.title %>'">
+                            <figcaption> <%= media.title %>  </figcaption>
                         </figure>
-                        <p>9,9</p>
+                        <p> <%= media.rating %> </p>
                         <button>
-                            <a href="">Detalhes</a>
+                            <a href="/movie/<%=media.id%>">Detalhes</a>
                         </button>
                     </div>
                 </div>
-                <div class="card">
-                    <div class="card-content">
-                        <figure>
-                            <img src="/images/covers/capaFilme1.jpg" alt="Imagem da capa do filme" srcset="" title="Imagem da capa do filme">
-                            <figcaption>O mergulhador</figcaption>
-                        </figure>
-                        <p>9,9</p>
-                        <button>
-                            <a href="">Detalhes</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <figure>
-                            <img src="/images/covers/capaFilme1.jpg" alt="Imagem da capa do filme" srcset="" title="Imagem da capa do filme">
-                            <figcaption>O mergulhador</figcaption>
-                        </figure>
-                        <p>9,9</p>
-                        <button>
-                            <a href="">Detalhes</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <figure>
-                            <img src="/images/covers/capaFilme1.jpg" alt="Imagem da capa do filme" srcset="" title="Imagem da capa do filme">
-                            <figcaption>O mergulhador</figcaption>
-                        </figure>
-                        <p>9,9</p>
-                        <button>
-                            <a href="">Detalhes</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <figure>
-                            <img src="/images/covers/capaFilme1.jpg" alt="Imagem da capa do filme" srcset="" title="Imagem da capa do filme">
-                            <figcaption>O mergulhador</figcaption>
-                        </figure>
-                        <p>9,9</p>
-                        <button>
-                            <a href="">Detalhes</a>
-                        </button>
-                    </div>
-                </div>
+                <%  } %> 
             </div>
         </div>
         <div class="section-2">
             <h3>Séries em alta</h3>
             <div class="series">
-                <div class="card">
-                    <div class="card-content">
-                        <figure>
-                            <img src="/images/covers/capaFilme1.jpg" alt="Imagem da capa do filme" srcset="" title="Imagem da capa do filme">
-                            <figcaption>O mergulhador</figcaption>
-                        </figure>
-                        <p>9,9</p>
-                        <button>
-                            <a href="">Detalhes</a>
-                        </button>
+                <% for (var media = mediaMock.length; media--;) { %> 
+                    <div class="card">
+                        <div class="card-content">
+                            <figure>
+                                <img src="<%= mediaMock[media].cover %>" alt="Imagem da capa do filme '<%= mediaMock[media].title %>'" srcset="" title="Imagem da capa do filme '<%= mediaMock[media].title %>'">
+                                <figcaption> <%= mediaMock[media].title %>  </figcaption>
+                            </figure>
+                            <p> <%= mediaMock[media].rating %> </p>
+                            <button>
+                                <a href="/serie/<%=mediaMock[media].id%>">Detalhes</a>
+                            </button>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <figure>
-                            <img src="/images/covers/capaFilme1.jpg" alt="Imagem da capa do filme" srcset="" title="Imagem da capa do filme">
-                            <figcaption>O mergulhador</figcaption>
-                        </figure>
-                        <p>9,9</p>
-                        <button>
-                            <a href="">Detalhes</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <figure>
-                            <img src="/images/covers/capaFilme1.jpg" alt="Imagem da capa do filme" srcset="" title="Imagem da capa do filme">
-                            <figcaption>O mergulhador</figcaption>
-                        </figure>
-                        <p>9,9</p>
-                        <button>
-                            <a href="">Detalhes</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <figure>
-                            <img src="/images/covers/capaFilme1.jpg" alt="Imagem da capa do filme" srcset="" title="Imagem da capa do filme">
-                            <figcaption>O mergulhador</figcaption>
-                        </figure>
-                        <p>9,9</p>
-                        <button>
-                            <a href="">Detalhes</a>
-                        </button>
-                    </div>
-                </div>
-                <div class="card">
-                    <div class="card-content">
-                        <figure>
-                            <img src="/images/covers/capaFilme1.jpg" alt="Imagem da capa do filme" srcset="" title="Imagem da capa do filme">
-                            <figcaption>O mergulhador</figcaption>
-                        </figure>
-                        <p>9,9</p>
-                        <button>
-                            <a href="">Detalhes</a>
-                        </button>
-                    </div>
-                </div>
+                <%  } %> 
             </div>
         </div>
     </main>
