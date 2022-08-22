@@ -41,6 +41,7 @@ app.get('/serie/:id', (req, res) => {
   res.render('detailed/series', { serie, cast });
 });
 
-app.listen(3000, () => {
-  console.log('Listening port 3000');
-});
+// Debugging
+// app.listen(3000, () => {
+//   console.log('Listening port 3000');
+// });
