@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='styles/home.css' />
+    <title>FIAP Movies - Web</title>
+</head>
+
+<body>
+    <%- include('templates/header') %> 
+    <main>
+        <div class="background">
+            <h2>
+                Encontre rapidamente o que assistir
+            </h2>
+        </div>
+        <div class="section-1">
+            <h3>Filmes em alta</h3>
+            <div class="movies">
+                <% for (const media of mediaMock) { %> 
+                <div class="card">
+                    <div class="card-content">
+                        <figure>
+                            <img src="<%= media.cover %>" alt="Imagem da capa do filme '<%= media.title %>'" srcset="" title="Imagem da capa do filme '<%= media.title %>'">
+                            <figcaption> <%= media.title %>  </figcaption>
+                        </figure>
+                        <p> <%= media.rating %> </p>
+                        <button>
+                            <a href="/movie/<%=media.id%>">Detalhes</a>
+                        </button>
+                    </div>
+                </div>
+                <%  } %> 
+            </div>
+        </div>
+        <div class="section-2">
+            <h3>Séries em alta</h3>
+            <div class="series">
+                <% for (var media = mediaMock.length; media--;) { %> 
+                    <div class="card">
+                        <div class="card-content">
+                            <figure>
+                                <img src="<%= mediaMock[media].cover %>" alt="Imagem da capa do filme '<%= mediaMock[media].title %>'" srcset="" title="Imagem da capa do filme '<%= mediaMock[media].title %>'">
+                                <figcaption> <%= mediaMock[media].title %>  </figcaption>
+                            </figure>
+                            <p> <%= mediaMock[media].rating %> </p>
+                            <button>
+                                <a href="/serie/<%=mediaMock[media].id%>">Detalhes</a>
+                            </button>
+                        </div>
+                    </div>
+                <%  } %> 
+            </div>
+        </div>
+    </main>
+    <%- include('templates/footer') %> 
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/detailed/movies-series.css">
+    <title>FIAP Movies - <%= serie.title %> </title>
+</head>
+<body>
+    <header>
+        <div class="header-title">
+            <img src="/images/svg/titleIcon.svg" alt="Icone FIAP Movies" srcset="">
+            <h1>Fiap Filmes</h1>
+        </div>
+        <ul class="header-list">
+            <li>
+                <a href="/">Filmes</a>
+            </li>
+            <li>
+                <a href="/">Séries</a>
+            </li>
+            <li>
+                <a href="https://github.com/LeandroLuna/FIAP-Movies-Web" target="_blank" rel="noopener">Sobre</a>
+            </li>
+        </ul>
+    </header>
+    <main>
+        <div class="background" style="background: url('<%= serie.bg %>') #000;">
+            <div class="movie-informations">
+                <figure>
+                    <img src="<%= serie.cover %>" alt="Capa da série '<%= serie.title %>' ">
+                </figure>
+                <div class="movie-title-description">
+                    <h2>
+                        <%= serie.title %> 
+                    </h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum quia sunt accusantium autem natus. Ratione consectetur, ab sunt reiciendis veritatis eum dolorum delectus suscipit quidem impedit voluptatibus ea esse? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit perferendis repudiandae eius eligendi beatae illum facere illo soluta, consectetur voluptate incidunt quibusdam! Itaque sint suscipit consequatur accusantium iste optio sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, tempora blanditiis. Fugit corrupti minus incidunt nihil inventore obcaecati ex consequatur, id nemo odio. Saepe sunt error fugiat repellendus porro recusandae.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="section-1">
+            <div class="section-left">
+                <div class="buttons">
+                    <button><a id="button-icon-1" href="/">Voltar</a></button>
+                    <button><a id="button-icon-2" href="http://www.google.com/search?q=Site+da+série+<%= serie.title.replace(" ", "+")%>" target="_blank" rel="noopener">Site</a></button>
+                    <button><a href="https://www.youtube.com/results?search_query=<%= serie.title.replace(" ", "+")%>+trailer" target="_blank" rel="noopener">Trailer</a></button>
+                </div>
+                <div class="casting">
+                    <h3>Elenco</h3>
+                    <div class="cast-members">
+                        <% for (const actor of cast) { %>
+                            <div class="card">
+                                <div class="card-content-img">
+                                    <figure>
+                                        <img src="<%= actor.photo %> " alt="Foto do ator(a) '<%= actor.name %> '">
+                                        <figcaption> <%= actor.name %> </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="card-content-txt">
+                                    <p> <%= actor.character %> </p>
+                                </div>
+                            </div>
+                        <% } %> 
+                    </div>
+                </div>
+            </div>
+            <aside class="section-right">
+                <h3>Ficha técnica</h3>
+                <div class="detailed-informations">
+                    <h4>Título original</h4>
+                    <p><%= serie.originalTitle %> </p>
+                </div>
+                <div class="detailed-informations">
+                    <h4>Idioma original</h4>
+                    <p>Inglês</p>
+                </div>
+                <div class="detailed-informations">
+                    <h4>Orçamento</h4>
+                    <p>US$50 milhões</p>
+                </div>
+                <div class="detailed-informations">
+                    <h4>Receita</h4>
+                    <p>US$150 milhões</p>
+                </div>
+                <div class="detailed-informations">
+                    <h4>Lançamento</h4>
+                    <p>14/09/2022</p>
+                </div>
+                <div class="detailed-informations">
+                    <h4>Nota</h4>
+                    <p><%= serie.rating %> </p>
+                </div>
+            </aside>
+        </div>
+    </main>
+    <footer>
+        <p>
+            Created by <a href="https://www.linkedin.com/in/luna-leandro/" target="_blank" rel="noopener">Leandro Luna</a>! 💜
+        </p>
+    </footer>
+</body>
+</html>
