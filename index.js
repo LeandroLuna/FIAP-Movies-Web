@@ -1,18 +1,15 @@
 const express = require('express');
 const path = require('path');
 const ejsMate = require('ejs-mate');
-const { mediaMock, actorsMock } = require('./data/mock');
-
+const { mediaMock, actorsMock, moviesApi } = require('./data/mock');
+const { apiKey } = require('./utils/key');
 const app = express();
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', (req, res) => {
-  res.render('home', { mediaMock });
-});
-
+// Creates a random cast for every refresh in movies/tv show.
 function generateRandomCast() {
   let i = 0;
   const arr = [];
@@ -26,6 +23,16 @@ function generateRandomCast() {
   }
   return arr;
 }
+
+app.get('/', async (req, res) => {
+  const movies = await moviesApi(apiKey); // Get Movie/TV Show from external API: https://developers.themoviedb.org/3/getting-started/introduction
+  // console.log(movies.results[0]);
+  res.render('home', { mediaMock, movies });
+});
+
+app.get('/about', async (req, res) => {
+  res.render('about');
+});
 
 app.get('/movie/:id', (req, res) => {
   const id = req.params.id;
@@ -42,5 +49,5 @@ app.get('/serie/:id', (req, res) => {
 });
 
 app.listen(3000, () => {
-   console.log('Listening port 3000');
+  console.log('Listening port 3000');
 });

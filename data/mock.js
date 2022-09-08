@@ -1,3 +1,4 @@
+const fetch = require('node-fetch');
 module.exports.mediaMock = [
   {
     id: 1,
@@ -98,3 +99,13 @@ module.exports.actorsMock = [
     photo: '/images/portraits/dude7.jpg',
   },
 ];
+
+module.exports.moviesApi = async (API_KEY) => {
+  try {
+    const blob = await fetch(`https://api.themoviedb.org/3/movie/top_rated?api_key=${API_KEY}&language=pt-BR&page=1`);
+    const data = await blob.json();
+    return data;
+  } catch (e) {
+    return `Req. error: ${e.message}`;
+  }
+};

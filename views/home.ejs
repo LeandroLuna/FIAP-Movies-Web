@@ -36,6 +36,25 @@
                 <%  } %> 
             </div>
         </div>
+        <!-- <div class="section-1">
+            <h3>Filmes em alta - API</h3>
+            <div class="movies">
+                <% for (let i = 0; i < 5; i++) { %> 
+                <div class="card">
+                    <div class="card-content">
+                        <figure>
+                            <img src="<%= `https://image.tmdb.org/t/p/w500/${movies.results[i].poster_path}` %>" alt="Imagem da capa do filme '<%= movies.results[i].title %>'" srcset="" title="Imagem da capa do filme '<%= movies.results[i].title %>'">
+                            <figcaption> <%= movies.results[i].title %>  </figcaption>
+                        </figure>
+                        <p> <%= movies.results[i].vote_average %> </p>
+                        <button>
+                            <a href="/movie/<%=movies.results[i].id%>">Detalhes</a>
+                        </button>
+                    </div>
+                </div>
+                <%  } %> 
+            </div>
+        </div> -->
         <div class="section-2">
             <h3>Séries em alta</h3>
             <div class="series">
