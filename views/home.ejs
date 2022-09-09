@@ -18,32 +18,13 @@
             </h2>
         </div>
         <div class="section-1">
-            <h3>Filmes em alta</h3>
-            <div class="movies">
-                <% for (const media of mediaMock) { %> 
-                <div class="card">
-                    <div class="card-content">
-                        <figure>
-                            <img src="<%= media.cover %>" alt="Imagem da capa do filme '<%= media.title %>'" srcset="" title="Imagem da capa do filme '<%= media.title %>'">
-                            <figcaption> <%= media.title %>  </figcaption>
-                        </figure>
-                        <p> <%= media.rating %> </p>
-                        <button>
-                            <a href="/movie/<%=media.id%>">Detalhes</a>
-                        </button>
-                    </div>
-                </div>
-                <%  } %> 
-            </div>
-        </div>
-        <!-- <div class="section-1">
-            <h3>Filmes em alta - API</h3>
+            <h3>Filmes em alta </h3>
             <div class="movies">
                 <% for (let i = 0; i < 5; i++) { %> 
                 <div class="card">
                     <div class="card-content">
                         <figure>
-                            <img src="<%= `https://image.tmdb.org/t/p/w500/${movies.results[i].poster_path}` %>" alt="Imagem da capa do filme '<%= movies.results[i].title %>'" srcset="" title="Imagem da capa do filme '<%= movies.results[i].title %>'">
+                            <img src="https://image.tmdb.org/t/p/w500/<%= movies.results[i].poster_path %>" alt="Imagem da capa do filme '<%= movies.results[i].title %>'" srcset="" title="Imagem da capa do filme '<%= movies.results[i].title %>'">
                             <figcaption> <%= movies.results[i].title %>  </figcaption>
                         </figure>
                         <p> <%= movies.results[i].vote_average %> </p>
@@ -54,24 +35,24 @@
                 </div>
                 <%  } %> 
             </div>
-        </div> -->
+        </div>
         <div class="section-2">
             <h3>Séries em alta</h3>
             <div class="series">
-                <% for (var media = mediaMock.length; media--;) { %> 
+                <% for (let i = 0; i < 5; i++) { %> 
                     <div class="card">
                         <div class="card-content">
                             <figure>
-                                <img src="<%= mediaMock[media].cover %>" alt="Imagem da capa do filme '<%= mediaMock[media].title %>'" srcset="" title="Imagem da capa do filme '<%= mediaMock[media].title %>'">
-                                <figcaption> <%= mediaMock[media].title %>  </figcaption>
+                                <img src="https://image.tmdb.org/t/p/w500/<%= series.results[i].poster_path %>" alt="Imagem da capa da série '<%= series.results[i].name %>'" srcset="" title="Imagem da capa da série '<%= series.results[i].name %>'">
+                                <figcaption> <%= series.results[i].name %>  </figcaption>
                             </figure>
-                            <p> <%= mediaMock[media].rating %> </p>
+                            <p> <%= series.results[i].vote_average %> </p>
                             <button>
-                                <a href="/serie/<%=mediaMock[media].id%>">Detalhes</a>
+                                <a href="/serie/<%=series.results[i].id%>">Detalhes</a>
                             </button>
                         </div>
                     </div>
-                <%  } %> 
+                    <%  } %> 
             </div>
         </div>
     </main>
