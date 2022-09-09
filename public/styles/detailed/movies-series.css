@@ -126,7 +126,7 @@ main{
 }
 
 .card-content-txt p{
-  color: var(--f-clr-fifth);
+  color: var(--f-clr-secondary);
   padding-top: 6.5em;
   padding-bottom: 3em;
 }
