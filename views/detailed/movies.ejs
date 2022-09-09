@@ -10,17 +10,17 @@
 <body>
     <%- include('../templates/header') %> 
     <main>
-        <div class="background" style="background: url('<%= movie.bg %>') #000;">
+        <div class="background" style="background: url('https://image.tmdb.org/t/p/original/<%= movie.backdrop_path %>') #000;">
             <div class="movie-informations">
                 <figure>
-                    <img src="<%= movie.cover %>" alt="Capa do filme '<%= movie.title %>' ">
+                    <img src="https://image.tmdb.org/t/p/w500/<%= movie.poster_path %>" alt="Capa do filme '<%= movie.title %>' ">
                 </figure>
                 <div class="movie-title-description">
                     <h2>
                         <%= movie.title %> 
                     </h2>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem laborum quia sunt accusantium autem natus. Ratione consectetur, ab sunt reiciendis veritatis eum dolorum delectus suscipit quidem impedit voluptatibus ea esse? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Odit perferendis repudiandae eius eligendi beatae illum facere illo soluta, consectetur voluptate incidunt quibusdam! Itaque sint suscipit consequatur accusantium iste optio sapiente? Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, tempora blanditiis. Fugit corrupti minus incidunt nihil inventore obcaecati ex consequatur, id nemo odio. Saepe sunt error fugiat repellendus porro recusandae.
+                        <%= movie.overview %> 
                     </p>
                 </div>
             </div>
@@ -35,16 +35,16 @@
                 <div class="casting">
                     <h3>Elenco</h3>
                     <div class="cast-members">
-                        <% for (const actor of cast) { %>
+                        <% for (let i = 0; i < 10; i++) { %>
                             <div class="card">
                                 <div class="card-content-img">
                                     <figure>
-                                        <img src="<%= actor.photo %> " alt="Foto do ator(a) '<%= actor.name %> '">
-                                        <figcaption> <%= actor.name %> </figcaption>
+                                        <img src="<%= casting.cast[i].profile_path ? `https://image.tmdb.org/t/p/w500/${casting.cast[i].profile_path}` : '/images/noprofilepicture.jpg' %> " alt="Foto do ator(a) '<%= casting.cast[i].name %> '">
+                                        <figcaption> <%= casting.cast[i].name %> </figcaption>
                                     </figure>
                                 </div>
                                 <div class="card-content-txt">
-                                    <p> <%= actor.character %> </p>
+                                    <p> <%= casting.cast[i].character %> </p>
                                 </div>
                             </div>
                         <% } %> 
@@ -55,31 +55,31 @@
                 <h3>Ficha técnica</h3>
                 <div class="detailed-informations">
                     <h4>Título original</h4>
-                    <p><%= movie.originalTitle %> </p>
+                    <p><%= movie.original_title %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Idioma original</h4>
-                    <p><%= movie.originalLanguage %> </p>
+                    <p><%= movie.original_language.toUpperCase() %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Orçamento</h4>
-                    <p><%= movie.budget %> </p>
+                    <p><%= movie.budget ? movie.budget.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'}) : 'N/A' %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Receita</h4>
-                    <p><%= movie.income %> </p>
+                    <p><%= movie.revenue ? movie.revenue.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'}) : 'N/A' %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Lançamento</h4>
-                    <p><%= movie.releaseDate %> </p>
+                    <p><%= movie.release_date.split("-").reverse().join("/") %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Nota</h4>
-                    <p><%= movie.rating %> </p>
+                    <p><%= movie.vote_average.toFixed(1) %> </p>
                 </div>
             </aside>
         </div>
+        <%- include('../templates/footer') %> 
     </main>
-    <%- include('../templates/footer') %> 
 </body>
 </html>
