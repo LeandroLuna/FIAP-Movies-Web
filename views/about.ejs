@@ -11,8 +11,22 @@
 
 <body>
     <%- include('templates/header') %> 
-    <main style="display:flex">
-        <h1 style="margin: auto;">Secção 'sobre'! :)</h1>
+    <main>
+        <div class="about-me">
+            <div class="portrait">
+                <figure>
+                    <img src="/images/portrait.jpeg" alt="Foto do Leandro Luna fantasiado de Peter Pan" srcset="" title="Foto do Leandro Luna fantasiado de Peter Pan">
+                </figure>
+            </div>
+            <div class="personal-info">
+                <h2>Informações</h2>
+                <h3>Nome: Leandro de Jesus Luna</h3>
+                <br>
+                <h3>RM: 86492</h3>
+                <br>
+                <h3>Turma: 3ECA</h3>
+            </div>
+        </div>
     </main>
     <%- include('templates/footer') %> 
 </body>

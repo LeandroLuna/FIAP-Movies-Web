@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/detailed/movies-series.css">
-    <title>FIAP Movies - <%= serie.name %> </title>
+    <title>FIAP Movies - <%= serie.name ? serie.name : serie.original_name %> </title>
 </head>
 <body>
     <%- include('../templates/header') %> 
@@ -13,11 +13,11 @@
         <div class="background" style="background: url('https://image.tmdb.org/t/p/original/<%= serie.backdrop_path %>') #000;">
             <div class="movie-informations">
                 <figure>
-                    <img src="https://image.tmdb.org/t/p/w500/<%= serie.poster_path %>" alt="Capa da série '<%= serie.name %>' ">
+                    <img src="https://image.tmdb.org/t/p/w500/<%= serie.poster_path %>" alt="Capa da série '<%= serie.name ? serie.name : serie.original_name %>' ">
                 </figure>
                 <div class="movie-title-description">
                     <h2>
-                        <%= serie.name %> 
+                        <%= serie.name ? serie.name : serie.original_name %> 
                     </h2>
                     <p>
                         <%= serie.overview %> 
@@ -29,8 +29,8 @@
             <div class="section-left">
                 <div class="buttons">
                     <button><a id="button-icon-1" href="/">Voltar</a></button>
-                    <button><a id="button-icon-2" href="http://www.google.com/search?q=Site+do+filme+<%= serie.name.replace(" ", "+")%>" target="_blank" rel="noopener">Site</a></button>
-                    <button><a href="https://www.youtube.com/results?search_query=<%= serie.name.replace(" ", "+")%>+trailer" target="_blank" rel="noopener">Trailer</a></button>
+                    <button><a id="button-icon-2" href="http://www.google.com/search?q=Site+do+filme+<%= serie.name ? serie.name.replace(" ", "+") : serie.original_name%>" target="_blank" rel="noopener">Site</a></button>
+                    <button><a href="https://www.youtube.com/results?search_query=<%= serie.name ? serie.name.replace(" ", "+") : serie.original_name %>+trailer" target="_blank" rel="noopener">Trailer</a></button>
                 </div>
                 <div class="casting">
                     <h3>Elenco</h3>
@@ -40,7 +40,7 @@
                             <div class="card">
                                 <div class="card-content-img">
                                     <figure>
-                                        <img src="https://image.tmdb.org/t/p/w500/<%= casting.cast[i].profile_path %> " alt="Foto do ator(a) '<%= casting.cast[i].name %> '">
+                                        <img src="<%= casting.cast[i].profile_path ? `https://image.tmdb.org/t/p/w500/${casting.cast[i].profile_path}` : '/images/noprofilepicture.jpg' %> " alt="Foto do ator(a) '<%= casting.cast[i].name %> '">
                                         <figcaption> <%= casting.cast[i].name %> </figcaption>
                                     </figure>
                                 </div>
@@ -68,11 +68,11 @@
                 </div>
                 <div class="detailed-informations">
                     <h4>Criado por</h4>
-                    <p><%= serie.created_by[0].name %> </p>
+                    <p><%= serie.created_by[0] ? serie.created_by[0].name : 'Unknown' %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Lançamento</h4>
-                    <p><%= serie.first_air_date %> </p>
+                    <p><%= serie.first_air_date.split("-").reverse().join("/")  %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Nota</h4>
@@ -80,7 +80,7 @@
                 </div>
             </aside>
         </div>
+        <%- include('../templates/footer') %> 
     </main>
-    <%- include('../templates/footer') %> 
 </body>
 </html>

@@ -2,4 +2,37 @@
 
 main {
     height: 100vh;
+    display: flex;
+    background: #333333;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #dd1818, #333333);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #dd1818, #333333); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.about-me{
+    display: inherit;
+    margin: auto;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 4em 8em;
+}
+
+.portrait, .personal-info{
+    margin: 2em;
+}
+
+.portrait img{
+    border-radius: 50%;
+    width: 30em;
+    height: 30em;
+}
+
+.personal-info{
+    margin: auto 0;
+    border-radius: 10%;
+    padding: 2em;
+}
+
+.personal-info h2{
+    padding-bottom: 0.5em;
+    text-transform: uppercase;
+    text-shadow: 0 3px var(--clr-primary);
 }

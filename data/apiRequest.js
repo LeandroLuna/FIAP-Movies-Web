@@ -1,3 +1,7 @@
+// License:
+// 'The Movie Database API'
+// Try different endpoints here: https://developers.themoviedb.org/3/getting-started/introduction
+
 const fetch = require('node-fetch');
 
 module.exports.moviesApi = async (API_KEY) => {

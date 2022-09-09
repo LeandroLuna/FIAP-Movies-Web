@@ -33,7 +33,6 @@ app.get('/serie/:id', async (req, res) => {
   const id = req.params.id;
   const serie = await fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=${apiKey}&language=pt-BR`).then((res) => res.json());
   const casting = await fetch(`https://api.themoviedb.org/3/tv/${id}/credits?api_key=${apiKey}&language=pt_BR`).then((res) => res.json());
-  console.log(serie);
   res.render('detailed/series', { serie, casting });
 });
 

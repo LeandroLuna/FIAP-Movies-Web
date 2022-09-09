@@ -39,7 +39,7 @@
                             <div class="card">
                                 <div class="card-content-img">
                                     <figure>
-                                        <img src="https://image.tmdb.org/t/p/w500/<%= casting.cast[i].profile_path %> " alt="Foto do ator(a) '<%= casting.cast[i].name %> '">
+                                        <img src="<%= casting.cast[i].profile_path ? `https://image.tmdb.org/t/p/w500/${casting.cast[i].profile_path}` : '/images/noprofilepicture.jpg' %> " alt="Foto do ator(a) '<%= casting.cast[i].name %> '">
                                         <figcaption> <%= casting.cast[i].name %> </figcaption>
                                     </figure>
                                 </div>
@@ -63,15 +63,15 @@
                 </div>
                 <div class="detailed-informations">
                     <h4>Orçamento</h4>
-                    <p><%= movie.budget %> </p>
+                    <p><%= movie.budget ? movie.budget.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'}) : 'N/A' %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Receita</h4>
-                    <p><%= movie.revenue %> </p>
+                    <p><%= movie.revenue ? movie.revenue.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'}) : 'N/A' %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Lançamento</h4>
-                    <p><%= movie.release_date %> </p>
+                    <p><%= movie.release_date.split("-").reverse().join("/") %> </p>
                 </div>
                 <div class="detailed-informations">
                     <h4>Nota</h4>
@@ -79,7 +79,7 @@
                 </div>
             </aside>
         </div>
+        <%- include('../templates/footer') %> 
     </main>
-    <%- include('../templates/footer') %> 
 </body>
 </html>
