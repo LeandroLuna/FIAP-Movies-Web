@@ -26,6 +26,7 @@
     --fs-300: .875rem;
     --fs-400: 1rem;
     --fs-500: 1.125rem;
+    --fs-550: 1.5rem;
     --fs-600: 2.25rem;
     --fs-700: 3rem;
 }
@@ -144,7 +145,7 @@ h3 {
 }
 
 /* Main */
-main{
+main {
     font-family: var(--ff-body);
 }
 
@@ -184,6 +185,27 @@ header nav {
 
 .header-list li:last-child {
     float: right;
+}
+
+/* Header responsiveness */
+@media screen and (max-width: 600px) {
+    nav {
+        text-align: right;
+    }
+
+    .header-list {
+        margin: 0.5em 0 0.5em 1em;
+    }
+
+    .header-list li {
+        font-size: var(--fs-400);
+        letter-spacing: calc(var(--fs-400) * 0.04);
+        padding-left: 0.5em;
+    }
+
+    .header-list li:last-child {
+        float: none;
+    }
 }
 
 /* Footer */

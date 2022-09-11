@@ -26,6 +26,7 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
+  justify-content: space-evenly;
 }
 
 .card{
@@ -35,8 +36,11 @@
 }
 
 .card-content{
+  display: flex;
+  flex-direction: column;
   text-align: center;
   line-height: 1.75rem;
+  height: 100%;
 }
 
 .card-content figure img{
@@ -49,6 +53,7 @@
 .card-content p{
   font-size: var(--fs-400);
   color: var(--f-clr-tertiary);
+  margin-bottom: 0.25em;
 }
 
 .card-content p::before{
@@ -64,5 +69,22 @@
   color: inherit;
   border-radius: 10%;
   border: 0;
-  margin-top: 0.25em;
+  margin: auto auto 0;
+  width: 50%;
+}
+
+/* Min responsiveness */
+@media screen and (max-width: 1000px) {
+  .card{
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  h2 {
+    font-size: var(--fs-550);
+  }
+  .card{
+    width: 50%;
+  }
 }
