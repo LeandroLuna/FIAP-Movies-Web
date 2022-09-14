@@ -19,6 +19,14 @@ main {
     margin: 2em;
 }
 
+.portrait{
+    display: flex;
+}
+
+.portrait figure{
+    margin: auto;
+}
+
 .portrait img{
     border-radius: 50%;
     width: 30em;
@@ -46,4 +54,22 @@ button {
     border: 0;
     height: 2em;
     margin-top: 2em;
+}
+
+@media screen and (max-width: 700px) {
+    .portrait img{
+        width: 20em;
+        height: 20em;
+    }
+
+    .personal-info h2{
+        font-size: var(--fs-550);
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .portrait img{
+        width: 10em;
+        height: 10em;
+    }
 }
