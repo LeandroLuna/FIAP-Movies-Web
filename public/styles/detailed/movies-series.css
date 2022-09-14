@@ -136,6 +136,7 @@ main{
   background-color: var(--clr-secondary);
   padding: 1em;
   margin: 0 0 1em 10%;
+  height: fit-content;
 }
 
 .detailed-informations{
@@ -146,3 +147,57 @@ main{
   color: var(--f-clr-secondary);
 }
 
+@media screen and (max-width: 1000px) {
+  .card{
+    width: 30%;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .movie-informations figure{
+    max-width: 50%;
+  }
+
+  .detailed-informations p{
+    font-size: var(--fs-200);
+  }
+
+  .card{
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 730px) {
+  .buttons button {
+    padding: 0 1.5em;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .buttons button {
+    padding: 0 1em;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .movie-informations figure{
+    display: none;
+  }
+
+  .movie-title-description{
+    width: 100vw;
+  }
+
+  .buttons button {
+    display: block;
+    margin-bottom: 1em;
+    min-width: 40%;
+  }
+
+  .cast-members{
+    justify-content: space-evenly;
+  }
+  .card{
+    width: 80%;
+  }
+}
